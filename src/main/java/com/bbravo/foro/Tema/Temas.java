@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,21 +20,26 @@ public class Temas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long IdTema;
     @Column(name = "titulo")
+    @NotNull(message = "Campo en null, debe ingresar un titulo.")
+    @NotEmpty(message = "Campo vacío, debe ingresar un titulo.")
     private String titulo;
     @Column(name = "contenido")
+    @NotNull(message = "Campo en null, debe ingresar un contenido.")
+    @NotEmpty(message = "Campo vacío, debe ingresar un contenido.")
     private String contenido;
-    @Column(name = "id_categoria")
+    @Column(name = "idCategoria")
+    @NotNull(message = "Campo en null, debe ingresar un id categoria.")
     private Long idCategoria;
 
     public Long getIdTema(){
         return IdTema;
     }
 
-    public String getTituloTema(){
+    public String getTitulo(){
         return titulo;
     }
 
-    public String getContenidoTema(){
+    public String getContenido(){
         return contenido;
     }
 
@@ -45,15 +52,15 @@ public class Temas {
         this.IdTema = id;
     }
 
-    public void setTituloTema(String titulo){
+    public void setTitulo(String titulo){
         this.titulo = titulo;
     }
 
-    public void setContendoTema(String contenido){
+    public void setContendo(String contenido){
         this.contenido = contenido;
     }
 
-    public void setNombreTema(Long idCategoria){
+    public void setIdCategoria(Long idCategoria){
         this.idCategoria = idCategoria;
     }
 }

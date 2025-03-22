@@ -23,20 +23,18 @@ public class Respuestas {
     @NotNull(message = "Campo en null, debe ingresar un contenido.")
     @NotEmpty(message = "Campo vacío, debe ingresar un contenido.")
     private String contenido;
-    @Column(name = "id_tema")
+    @Column(name = "idTema")
     @NotNull(message = "Campo en null, debe ingresar el id del tema.")
-    @NotEmpty(message = "Campo vacío, debe ingresar el id del tema.")
     private Long idTema;
-    @Column(name = "id_usuario")
+    @Column(name = "idUsuario")
     @NotNull(message = "Campo en null, debe ingresar el id del usuario.")
-    @NotEmpty(message = "Campo vacío, debe ingresar el id del usuario.")
     private Long idUsuario;
 
     public Long getIdRespuesta(){
         return IdRespuesta;
     }
 
-    public String getContenidoRespuesta(){
+    public String getContenido(){
         return contenido;
     }
 
@@ -53,7 +51,7 @@ public class Respuestas {
         this.IdRespuesta = id;
     }
 
-    public void setContenidoRespuesta(String contenido){
+    public void setContenido(String contenido){
         this.contenido = contenido;
     }
 

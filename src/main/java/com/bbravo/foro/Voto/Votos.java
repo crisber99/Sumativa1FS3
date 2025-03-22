@@ -18,10 +18,10 @@ public class Votos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long IdVoto;
-    @Column(name = "id_respuesta")
+    @Column(name = "idRespuesta")
     @NotNull(message = "Debe ingresar un valor")
     private Long idRespuesta;
-    @Column(name = "id_usuario")
+    @Column(name = "idUsuario")
     @NotNull(message = "Debe ingresar un valor")
     private Long idUsuario;
 
